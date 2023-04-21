@@ -1,5 +1,5 @@
 ,cluster,block,district,academicyear,
-,cluster_id,block_id,district_id,academicyear_id,
+,cluster_id,block_id,district_id,academicyear,
 date,string,string,string,string,string
-date,cluster_id,block_id,district_id,academicyear_id,meeting_conducted
+date,cluster_id,block_id,district_id,academicyear,meeting_conducted
 timeDimension,dimension,dimension,dimension,dimension,metric
