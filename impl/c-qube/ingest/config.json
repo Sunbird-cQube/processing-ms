@@ -68,7 +68,8 @@
       },
       "dimensions": {
         "whitelisted": [
-          "district,categorypm"
+          "month,district,categorypm",
+          "date,district_id,total_meals_served"
         ],
         "blacklisted": []
       }
