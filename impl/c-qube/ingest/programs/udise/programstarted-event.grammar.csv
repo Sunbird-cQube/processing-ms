@@ -1,5 +1,5 @@
 state,
 state_id,
-string,string
+string,integer
 state_id,started
 dimension,metric
