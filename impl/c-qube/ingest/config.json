@@ -23,7 +23,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,grade,subject,medium,board",
+          "state,grade,subject,medium",
           "textbookdiksha,grade,subject,medium"
         ],
         "blacklisted": []
@@ -68,8 +68,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "month,district,categorypm",
-          "date,district_id,total_meals_served"
+          "district,categorypm"
         ],
         "blacklisted": []
       }

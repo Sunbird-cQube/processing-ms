@@ -18,9 +18,10 @@ import { EventService } from '../event/event.service';
 import { DataFrame } from 'nodejs-polars';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const fs = require('fs').promises;
+import * as fs from 'fs';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pl = require('nodejs-polars');
+const readline = require('readline');
 
 describe('CsvAdapterService', () => {
   let service: CsvAdapterService;
@@ -51,7 +52,48 @@ describe('CsvAdapterService', () => {
     console.log(df);
   });
 
-  // it('should create dimensions out of CSV', async () => {
+    it('should create a temp csv file', async () => {
+        const inputFile = 'fixtures/dimension-with-comma.csv';
+        const outputFile = 'fixtures/dimension-with-comma.temp.csv';
+
+        async function processCsv(input, output){
+            if (fs.existsSync(output)){
+                fs.unlinkSync(output)
+            }
+            const readStream = fs.createReadStream(input);
+            const file = readline.createInterface({
+                input: readStream,
+                output: process.stdout,
+                terminal: false
+            });
+            file.on('line', (line) => {
+                let newline = '';
+                for (const letter in line){
+                    if(line[letter] == '"'){
+                        continue
+                    }
+                    else{
+                        newline = newline+line[letter];
+                    }
+
+                    // console.log(line.substring(6,line.length-1))
+                }
+                fs.writeFile(output, newline+'\r\n', { flag: 'a+' }, err => {});
+
+            });
+
+        }
+
+        try {
+            await processCsv(inputFile, outputFile);
+            console.log(`CSV file successfully processed and saved as ${outputFile}`);
+        } catch (error) {
+            console.error('Error processing CSV file:', error);
+        }
+    });
+
+
+    // it('should create dimensions out of CSV', async () => {
   //   const dimensionGrammar: DimensionGrammar =
   //     await createDimensionGrammarFromCSVDefinition(
   //       'fixtures/cluster-dimension.grammar.csv',
