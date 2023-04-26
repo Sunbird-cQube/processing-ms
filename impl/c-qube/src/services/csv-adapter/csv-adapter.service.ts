@@ -630,12 +630,12 @@ export class CsvAdapterService {
     }
 
     public async processCsv(input, output) {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             if (fs1.existsSync(output)) {
                 fs1.unlinkSync(output)
             }
             const readStream = fs1.createReadStream(input);
-            const file = readline.createInterface({
+            const file = await readline.createInterface({
                 input: readStream,
                 output: process.stdout,
                 terminal: false
