@@ -16,9 +16,10 @@ import { DatasetGrammar } from 'src/types/dataset';
 import { EventGrammar } from 'src/types/event';
 import { EventService } from '../event/event.service';
 import { DataFrame } from 'nodejs-polars';
-
+import * as csv from 'csv-parser';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 import * as fs from 'fs';
+const fs1 = require('fs');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pl = require('nodejs-polars');
 const readline = require('readline');
@@ -92,6 +93,31 @@ describe('CsvAdapterService', () => {
         }
     });
 
+    it('should parse dataframe with comma', async () => {
+        async function readCSV(filePath: string): Promise<string[][]> {
+            return new Promise((resolve, reject) => {
+                const rows: string[][] = [];
+
+                fs1
+                    .createReadStream(filePath)
+                    .pipe(csv({ separator: ',', headers: false }))
+                    .on('data', (data) => {
+                        rows.push(Object.values(data));
+                    })
+                    .on('end', () => {
+                        resolve(rows);
+                    })
+                    .on('error', (error) => {
+                        reject(error);
+                    });
+            });
+        }
+
+        const filePath = 'fixtures/category-event.data.csv';
+        const df = await readCSV(filePath);
+        // df.shift(); // Remove the header row
+        console.log('csv-adapter.service.spec.: ', df[1600]);
+    });
 
     // it('should create dimensions out of CSV', async () => {
   //   const dimensionGrammar: DimensionGrammar =

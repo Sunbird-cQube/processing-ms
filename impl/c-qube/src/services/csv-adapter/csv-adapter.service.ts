@@ -630,12 +630,13 @@ export class CsvAdapterService {
     }
 
     public async processCsv(input, output) {
-        return new Promise(async (resolve, reject) => {
+        return new Promise((resolve, reject) => {
             if (fs1.existsSync(output)) {
                 fs1.unlinkSync(output)
             }
             const readStream = fs1.createReadStream(input);
-            const file = await readline.createInterface({
+            const writeStream = fs1.createWriteStream(output);
+            const file = readline.createInterface({
                 input: readStream,
                 output: process.stdout,
                 terminal: false
@@ -645,21 +646,25 @@ export class CsvAdapterService {
                 for (const letter in line) {
                     if (line[letter] == '"') {
                         continue
-                    }
-                    else {
+                    } else {
                         newline = newline + line[letter];
                     }
                 }
-                fs1.writeFile(output, newline + '\r\n', {flag: 'a+'}, err => {
-                });
+                writeStream.write(newline + '\r\n');
             });
             file.on('close', async () => {
                 await fs1.unlinkSync(input);
                 await this.processSleep(200);
                 readStream.close();
-                await  fs1.renameSync(output, input);
-                resolve(output);
-            })
+                writeStream.end();
+                writeStream.on('finish', async () => {
+                    await fs1.renameSync(output, input);
+                    resolve(output);
+                });
+            });
+            file.on('error', (err) => {
+                reject(err);
+            });
         });
     }
 
