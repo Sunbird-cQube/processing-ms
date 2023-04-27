@@ -30,32 +30,6 @@
       }
     },
     {
-      "name": "School Attendance",
-      "namespace": "sch_att",
-      "description": "School Attendance",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/programs/school-attendance"
-      },
-      "./output": {
-        "location": "././output/programs/school-attendance"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "gender,district",
-          "gender,block",
-          "gender,cluster",
-          "school,grade",
-          "gender,school",
-          "gender,school,grade",
-          "schoolcategory,district",
-          "schoolcategory,block",
-          "schoolcategory,cluster"
-        ],
-        "blacklisted": []
-      }
-    },
-    {
       "name": "PM Poshan",
       "namespace": "pm_poshan",
       "description": "PM Poshan",
@@ -108,26 +82,6 @@
         "whitelisted": [
           "district,categoryudise",
           "state,categoryudise"
-        ],
-        "blacklisted": []
-      }
-    },
-    {
-      "name": "Review and Monitoring",
-      "namespace": "rev_and_monitoring",
-      "description": "Review and Monitoring",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/programs/rev-and-monitor"
-      },
-      "./output": {
-        "location": "./output/programs/rev-and-monitor"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "academicyear,district",
-          "academicyear,block",
-          "academicyear,cluster"
         ],
         "blacklisted": []
       }
