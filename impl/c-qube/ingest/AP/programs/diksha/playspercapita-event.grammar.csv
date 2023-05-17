@@ -1,0 +1,5 @@
+,state,
+,state_id,
+date,string,integer
+date,state_id,plays_per_capita
+timeDimension,dimension,metric

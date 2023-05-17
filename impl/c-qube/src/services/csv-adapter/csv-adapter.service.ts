@@ -58,7 +58,7 @@ export class CsvAdapterService {
     public datasetService: DatasetService,
     public prisma: PrismaService,
   ) {}
-
+  ingestionFolder = `./ingest/${process.env.STATE_NAME}`
   async csvToDomainSpec(
     csvPath: string,
     dataFieldColumn: string,
@@ -327,9 +327,9 @@ export class CsvAdapterService {
 
     // Parse the config
     s.start('🚧 2. Reading your config');
-    const ingestionFolder = './ingest';
+    // const ingestionFolder = `./ingest/${process.env.STATE_NAME}`;
     const config = JSON.parse(
-      await readFile(ingestionFolder + '/config.json', 'utf8'),
+      await readFile(this.ingestionFolder +'/config.json', 'utf8'),
     );
     const regexEventGrammar = /\-event\.grammar.csv$/i;
     const defaultTimeDimensions = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
@@ -349,6 +349,7 @@ export class CsvAdapterService {
     const insertDimensionDataPromises = [];
     const dimensions: DimensionGrammar[] = [];
     const dimensionGrammarFolder = config?.dimensions.input?.files;
+    console.log("DImension", dimensionGrammarFolder);
     const regexDimensionGrammar = /\-dimension\.grammar.csv$/i;
     const inputFilesForDimensions = readdirSync(dimensionGrammarFolder);
     for (let i = 0; i < inputFilesForDimensions?.length; i++) {
@@ -655,7 +656,7 @@ export class CsvAdapterService {
     // s.stop('✅ 1. The Data has been Nuked');
 
     // iterate over all *.data.csv files inside programs folder
-    const files = getFilesInDirectory('./ingest/programs');
+    const files = getFilesInDirectory(`${this.ingestionFolder}/programs`);
 
     let promises = [];
     for (let i = 0; i < files.length; i++) {
