@@ -171,6 +171,63 @@
         ],
         "blacklisted": []
       }
+    },
+    {
+      "name": "Student Progression",
+      "namespace": "student_progression",
+      "description": "Student Progression",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/JH/programs/student-progression"
+      },
+      "./output": {
+        "location": "./output/programs/student-progression"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "school,academicyear"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "School Infrastructure",
+      "namespace": "school_infra",
+      "description": "School Infrastructure",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/JH/programs/school-infra"
+      },
+      "./output": {
+        "location": "./output/programs/school-infra"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "school,academicyear"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "Student Assessment",
+      "namespace": "assessment",
+      "description": "Student Assessment",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/JH/programs/student-assessment"
+      },
+      "./output": {
+        "location": "./output/programs/student-assessment"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "exam,grade,academicyear,subject,lo,school",
+          "state,lo,subject,grade",
+          "district,subject,grade"
+        ],
+        "blacklisted": []
+      }
     }
+  
   ]
 }

@@ -1,0 +1,5 @@
+,school,academicyear,exam,grade,subject,loassessment,
+,school_id,academicyear_id,exam_id,grade,subject,lo_id,
+date,string,string,string,string,string,string,integer
+date,school_id,academicyear_id,exam_id,grade,subject,lo_id,total_marks
+timeDimension,dimension,dimension,dimension,dimension,dimension,dimension,metric
