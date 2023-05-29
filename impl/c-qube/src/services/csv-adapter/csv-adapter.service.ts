@@ -53,10 +53,10 @@ export class CsvAdapterService {
     public datasetService: DatasetService,
     public prisma: PrismaService,
     public dimensionGrammarService: DimensionGrammarService,
-  ) { }
+  ) {}
 
   public async ingest(
-    ingestionFolder = `./ingest/${process.env.STATE_NAME}`,
+    ingestionFolder = `./ingest${process.env.STATE_NAME}`,
     ingestionConfigFileName = 'config.json',
   ) {
     const s = spinner();
