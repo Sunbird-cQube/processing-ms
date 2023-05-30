@@ -26,6 +26,44 @@ async function bootstrap() {
       await application.close();
       process.exit(0);
     })
+    .command('ingest-grammar', 'Starting Ingestion Process', (yargs)=>{
+      yargs.option('grammar_type',{
+        alias: 'g',
+        type: 'string',
+        default:'none',
+        describe: 'Ingest Dimensions, events or datasets',
+        choices:(['dimension','event','none'])
+      })
+    }, async (argv) => {
+      console.log("arguments are:",argv.grammar_type);
+      process.env['DEBUG'] = argv.debug.toString();
+      const grammar_type = argv.grammar_type;
+      if(grammar_type === 'none'){
+        await csvAdapterService.ingestGrammar('');
+      }
+      else{
+        await csvAdapterService.ingestGrammar(grammar_type);
+      }
+      // intro(`Starting Ingestion Process`);
+      // outro(`You're all set!`);
+      await application.close();
+      process.exit(0);
+    })
+    .command('ingest-dimension','Starting dimension data ingestion process',(yargs)=>{
+      yargs.option('filter', {
+        alias: 'g',
+        type: 'string',
+        default:'none',
+        describe: 'Ingest Dimension data',
+      })
+    },
+    async (argv) => {
+      process.env['DEBUG'] = argv.debug.toString();
+      const filter = argv.filter;
+      await csvAdapterService.ingestDimensionData(filter);
+      
+    }
+    )
     .command(
       'ingest-data',
       'Starting Data Ingestion Process',
@@ -74,7 +112,6 @@ async function bootstrap() {
       async (argv) => {
         process.env['DEBUG'] = argv.debug.toString();
         const filter = argv.filter;
-
         if (filter === 'none') {
           await csvAdapterService.nukeDatasets({});
         } else {
