@@ -9,7 +9,6 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const _ = require('lodash');
-
 @Injectable()
 export class DimensionService {
   constructor(
@@ -134,7 +133,7 @@ export class DimensionService {
     });
     data = _.uniqBy(data, 'name');
 
-    const insertQuery = this.qbService.generateBulkInsertStatement(
+    const insertQuery = this.qbService.generateBulkInsertStatementOld(
       dimensionGrammar.schema,
       data,
     );
@@ -178,11 +177,14 @@ export class DimensionService {
       console.error(dimensionGrammar.name);
       console.error(err);
     });
-    const insertQuery = this.qbService.generateBulkInsertStatement(
+    const insertQuery = this.qbService.generateBulkInsertStatementOld(
       dimensionGrammar.schema,
       data,
       result[0].conname
     );
+
+    // console.log('dimensionGrammar: ', dimensionGrammar.schema);
+
     await this.prisma.$queryRawUnsafe(insertQuery).catch(async (err) => {
       console.log('After', dimensionGrammar.name, data.length);
       console.error(insertQuery);
