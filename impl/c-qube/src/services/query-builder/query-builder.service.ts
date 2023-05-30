@@ -138,7 +138,7 @@ export class QueryBuilderService {
     return this.cleanStatement(query);
   }
 
-  generateBulkInsertStatement(schema: JSONSchema4, data: any[]): string {
+  generateBulkInsertStatement(schema: JSONSchema4, data: any[], pkey?: string): string {
     const tableName = schema.title;
     const psqlSchema = schema.psql_schema;
     const fields = [];
@@ -167,11 +167,25 @@ export class QueryBuilderService {
       }
       values.push(`(${rowValues.join(', ')})`);
     }
+    if(psqlSchema === 'dimensions'){
+      let replaceFormat = [];
+      for (let item of fields)
+      {
+        replaceFormat.push(item + '=EXCLUDED.' + item);
 
-    const query = `INSERT INTO ${psqlSchema}.${tableName} (${fields.join(
-      ', ',
-    )}) VALUES ${values.join(', ')};`;
-    return this.cleanStatement(query);
+      }
+      const query = `INSERT INTO ${psqlSchema}.${tableName} (${fields.join(
+        ', ',
+      )}) VALUES ${values.join(', ')} ON CONFLICT ON CONSTRAINT ${pkey} DO UPDATE SET ${replaceFormat.join(',')};`;
+      return this.cleanStatement(query);
+    }
+    else{
+      const query = `INSERT INTO ${psqlSchema}.${tableName} (${fields.join(
+        ', ',
+      )}) VALUES ${values.join(', ')} `;
+      return this.cleanStatement(query);
+    }
+   
   }
 
   generateUpdateStatement(schema: JSONSchema4, data: any): string[] {

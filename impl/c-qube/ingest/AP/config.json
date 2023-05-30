@@ -10,6 +10,25 @@
     }
   },
   "programs": [
+    
+    {
+      "name": "PM Poshan",
+      "namespace": "pm_poshan",
+      "description": "PM Poshan",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/AP/programs/pm-poshan"
+      },
+      "./output": {
+        "location": "./output/programs/pm-poshan"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "district,categorypm"
+        ],
+        "blacklisted": []
+      }
+    },
     {
       "name": "DIKSHA",
       "namespace": "diksha",
@@ -26,50 +45,6 @@
           "state,grade,subject,medium,board",
           "textbookdiksha,grade,subject,medium",
           "textbookdiksha,grade,subject,medium"
-        ],
-        "blacklisted": []
-      }
-    },
-    {
-      "name": "School Attendance",
-      "namespace": "sch_att",
-      "description": "School Attendance",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/AP/programs/school-attendance"
-      },
-      "./output": {
-        "location": "././output/programs/school-attendance"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "gender,district",
-          "gender,block",
-          "gender,cluster",
-          "school,grade",
-          "gender,school",
-          "gender,school,grade",
-          "schoolcategory,district",
-          "schoolcategory,block",
-          "schoolcategory,cluster"
-        ],
-        "blacklisted": []
-      }
-    },
-    {
-      "name": "PM Poshan",
-      "namespace": "pm_poshan",
-      "description": "PM Poshan",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/AP/programs/pm-poshan"
-      },
-      "./output": {
-        "location": "./output/programs/pm-poshan"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "district,categorypm"
         ],
         "blacklisted": []
       }
@@ -171,6 +146,6 @@
         ],
         "blacklisted": []
       }
-    }
+    }  
   ]
 }

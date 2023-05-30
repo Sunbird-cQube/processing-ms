@@ -165,11 +165,24 @@ export class DimensionService {
     dimensionGrammar: DimensionGrammar,
     data: any[],
   ): Promise<void> {
+    const constratintQuery = `SELECT conname, contype
+    FROM pg_catalog.pg_constraint c
+    JOIN pg_class t ON t.oid = c.conrelid
+    WHERE t.relname ='${dimensionGrammar.schema.title}' and c.contype = 'u';`
+    const result = await this.prisma.$queryRawUnsafe(constratintQuery).catch(async (err) => {
+      console.log('After', dimensionGrammar.name, data.length);
+      console.error(insertQuery);
+      if (data.length < 50) {
+        console.log(data);
+      }
+      console.error(dimensionGrammar.name);
+      console.error(err);
+    });
     const insertQuery = this.qbService.generateBulkInsertStatement(
       dimensionGrammar.schema,
       data,
+      result[0].conname
     );
-
     await this.prisma.$queryRawUnsafe(insertQuery).catch(async (err) => {
       console.log('After', dimensionGrammar.name, data.length);
       console.error(insertQuery);
