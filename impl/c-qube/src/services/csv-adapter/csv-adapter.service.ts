@@ -57,7 +57,7 @@ export class CsvAdapterService {
   ) {}
 
   public async ingest(
-    ingestionFolder = `./ingest${process.env.STATE_NAME}`,
+    ingestionFolder = `./ingest/${process.env.STATE_NAME}`,
     ingestionConfigFileName = 'config.json',
   ) {
     const s = spinner();
@@ -648,7 +648,7 @@ export class CsvAdapterService {
       console.error(e);
     }
   }
-  public async generateOnlyDimensionGrammar(ingestionFolder = `./ingest${process.env.STATE_NAME}`){
+  public async generateOnlyDimensionGrammar(ingestionFolder = `./ingest/${process.env.STATE_NAME}`){
     const s = spinner();
     
     // await this.nuke();
@@ -722,7 +722,7 @@ export class CsvAdapterService {
     s.stop("✅ 4. Dimension Grammars have been ingested")
   }
 
-  public async generateOnlyEventAndDatasetGrammar(ingestionFolder = `./ingest${process.env.STATE_NAME}`){
+  public async generateOnlyEventAndDatasetGrammar(ingestionFolder = `./ingest/${process.env.STATE_NAME}`){
 
     const s = spinner();
     const config = JSON.parse(
@@ -939,7 +939,6 @@ export class CsvAdapterService {
                 
               }
             }
-            console.log("The dataset grammars with time dimension is:", datasetGrammarsGlobal);
           }
         }
       }
@@ -974,7 +973,7 @@ export class CsvAdapterService {
     s.stop('✅ Dataset Grammars have been ingested');  
   }
 
-  public async ingestDimensionData(filter: any,ingestionFolder = `./ingest${process.env.STATE_NAME}`){
+  public async ingestDimensionData(filter: any,ingestionFolder = `./ingest/${process.env.STATE_NAME}`){
     const s = spinner();
      // Parse the config
      s.start('🚧 1. Reading your config');
