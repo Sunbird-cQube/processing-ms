@@ -1,5 +1,0 @@
-,district,academicyear,
-,district_id,academicyear_id,
-date,string,string,integer
-date,district_id,academicyear_id,meeting_conducted
-timeDimension,dimension,dimension,metric

@@ -1,5 +1,5 @@
-state,district,
-state_id,district_id,
-string,string,integer
-state_id,district_id,no_of_schools
-dimension,dimension,metric
+state,district,grade,subject,lonas,
+state_id,district_id,grade,subject,lo_code,
+string,string,string,string,string,integer
+state_id,district_id,grade,subject,lo_code,no_of_schools
+dimension,dimension,dimension,dimension,dimension,metric

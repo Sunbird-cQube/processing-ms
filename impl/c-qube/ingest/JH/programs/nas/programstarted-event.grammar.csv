@@ -2,4 +2,4 @@ state,
 state_id,
 string,integer
 state_id,started
-dimension,metric
+dimension,metric
