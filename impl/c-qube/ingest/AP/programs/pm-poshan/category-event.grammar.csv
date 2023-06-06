@@ -1,5 +1,5 @@
-,district,categorypm,
-,district_id,category_name,
-date,string,string,integer
-date,district_id,category_name,category_value
-timeDimension,dimension,dimension,metric
+district,categorypm,
+district_id,category_name,
+string,string,integer
+district_id,category_name,category_value
+dimension,dimension,metric

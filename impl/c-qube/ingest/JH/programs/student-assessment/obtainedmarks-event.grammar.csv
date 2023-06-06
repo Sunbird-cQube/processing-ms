@@ -2,4 +2,4 @@
 ,school_id,academicyear_id,exam_id,grade_id,subject_id,lo_code,
 date,string,string,string,string,string,string,integer
 date,school_id,academicyear_id,exam_id,grade_id,subject_id,lo_code,obtained_marks
-timeDimension,dimension,dimension,dimension,dimension,dimension,dimension,metric
+timeDimension,dimension,dimension,dimension,dimension,dimension,dimension,metric
