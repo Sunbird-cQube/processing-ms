@@ -23,6 +23,8 @@ model DimensionGrammar {
   name          String        @unique
   description   String?
   schema        Json
+  type          String
+  storage       Json
   dimensionType DimensionType @default(INTERNAL)
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
