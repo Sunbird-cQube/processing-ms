@@ -653,12 +653,12 @@ export class CsvAdapterService {
     
     // await this.nuke();
      // Parse the config
-     s.start('🚧 1. Reading your config');
+     s.start('🚧  Reading your config');
      const config = JSON.parse(
        await readFile(ingestionFolder +'/config.json', 'utf8'),
      );
-    s.stop('✅ 2. Config parsing completed');
-    s.start('🚧 3. Processing Dimensions');
+    s.stop('✅  Config parsing completed');
+    s.start('🚧  Processing Dimensions');
     const dimensions: DimensionGrammar[] = [];
     const dimensionGrammarFolder = config?.dimensions.input?.files;
     console.log("Dimension", dimensionGrammarFolder);
@@ -719,7 +719,7 @@ export class CsvAdapterService {
         }
       }
     }
-    s.stop("✅ 4. Dimension Grammars have been ingested")
+    s.stop("✅  Dimension Grammars have been ingested")
   }
 
   public async generateOnlyEventAndDatasetGrammar(ingestionFolder = `./ingest/${process.env.STATE_NAME}`){

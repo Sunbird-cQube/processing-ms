@@ -62,6 +62,9 @@ export class QueryBuilderService {
         column.type === 'number' &&
         (column.format === 'float' || column.format === 'double')
       ) {
+        createStatement += `FLOAT8`;
+      }
+      else if(column.type == 'number'){
         createStatement += 'FLOAT8';
       } else if (column.type === 'integer') {
         createStatement += `integer`;
@@ -151,7 +154,6 @@ export class QueryBuilderService {
       if (propertiesToSkip.includes(property)) continue;
       fields.push(property);
     }
-
     for (const row of data) {
       const rowValues = [];
       for (const property in properties) {
@@ -162,7 +164,13 @@ export class QueryBuilderService {
         ) {
           rowValues.push(`'${row[property].toISOString()}'`);
         } else {
-          rowValues.push(`'${row[property]}'`);
+          // adding this condition to avoid stringify of null value for latitude and longitude column
+          if(psqlSchema === 'dimensions' && row[property] !== null){  
+            rowValues.push(`'${row[property]}'`);
+          }
+          else{
+            rowValues.push(`${row[property]}`)
+          }
         }
       }
       values.push(`(${rowValues.join(', ')})`);
