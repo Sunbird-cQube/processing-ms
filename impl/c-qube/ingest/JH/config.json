@@ -202,8 +202,8 @@
       },
       "dimensions": {
         "whitelisted": [
-          "exam,grade,academicyear,subject,lo,school",
-          "state,lo,subject,grade",
+          "exam,grade,academicyear,subject,loassessment,school",
+          "state,loassessment,subject,grade",
           "district,subject,grade"
         ],
         "blacklisted": []

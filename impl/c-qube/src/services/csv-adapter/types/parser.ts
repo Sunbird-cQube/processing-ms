@@ -25,6 +25,7 @@ export enum ColumnType {
   integer = 'integer',
   float = 'float',
   date = 'date',
+  number ='number'
 }
 
 export type Column = {
