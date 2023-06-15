@@ -23,9 +23,9 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,grade,subject,medium,board",
-          "textbookdiksha,grade,subject,medium",
+          "state,grade,subject,medium",
           "textbookdiksha,grade,subject,medium"
+         
         ],
         "blacklisted": []
       }
@@ -43,15 +43,6 @@
       },
       "dimensions": {
         "whitelisted": [
-          "gender,district",
-          "gender,block",
-          "gender,cluster",
-          "school,grade",
-          "gender,school",
-          "gender,school,grade",
-          "schoolcategory,district",
-          "schoolcategory,block",
-          "schoolcategory,cluster"
         ],
         "blacklisted": []
       }
@@ -148,7 +139,8 @@
           "state,district,programnishtha",
           "state,programnishtha,coursenishtha",
           "state,programnishtha",
-          "district,programnishtha"
+          "district,programnishtha",
+	        "coursenishtha,programnishtha"
         ],
         "blacklisted": []
       }
