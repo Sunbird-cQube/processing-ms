@@ -1,5 +1,5 @@
-,state,
-,state_id,
-date,string,integer
-date,state_id,plays_per_capita
-timedimension,dimension,metric
+state,
+state_id,
+string,integer
+state_id,plays_per_capita
+dimension,metric
