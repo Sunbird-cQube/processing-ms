@@ -108,6 +108,7 @@ export class CsvAdapterService {
           'grammar',
           'data',
         );
+        await processCsv(dimensionDataFileName, dimensionDataFileName.split('.csv')[0] + '_temp.csv');
         const df: DataFrame = pl.readCSV(dimensionDataFileName, {
           quoteChar: "'",
           ignoreErrors: true,
@@ -157,7 +158,7 @@ export class CsvAdapterService {
               dimensionGrammar,
               df.rows().map((r, index) => {
                 const data = {};
-                for (let i = 0; i < allHeaders.length; i++) {
+                for (let i = 0; i < allHeaders.length; i++) {                 
                   data[allHeaders[i]] = r[i];
                 }
                 return {
@@ -1021,6 +1022,7 @@ export class CsvAdapterService {
           'grammar',
           'data',
         );
+        await processCsv(dimensionDataFileName, dimensionDataFileName.split('.csv')[0] + '_temp.csv');
         const df: DataFrame = pl.readCSV(dimensionDataFileName, {
           quoteChar: "'",
           ignoreErrors: true,
