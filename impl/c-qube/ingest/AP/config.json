@@ -10,7 +10,43 @@
     }
   },
   "programs": [
-    
+    {
+      "name": "DIKSHA",
+      "namespace": "diksha",
+      "description": "DIKSHA",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/AP/programs/diksha"
+      },
+      "./output": {
+        "location": "./output/programs/diksha"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "state,grade,subject,medium",
+          "textbookdiksha,grade,subject,medium"
+         
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "School Attendance",
+      "namespace": "sch_att",
+      "description": "School Attendance",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/AP/programs/school-attendance"
+      },
+      "./output": {
+        "location": "././output/programs/school-attendance"
+      },
+      "dimensions": {
+        "whitelisted": [
+        ],
+        "blacklisted": []
+      }
+    },
     {
       "name": "PM Poshan",
       "namespace": "pm_poshan",
@@ -30,26 +66,6 @@
       }
     },
     {
-      "name": "DIKSHA",
-      "namespace": "diksha",
-      "description": "DIKSHA",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/AP/programs/diksha"
-      },
-      "./output": {
-        "location": "./output/programs/diksha"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "state,grade,subject,medium,board",
-          "textbookdiksha,grade,subject,medium",
-          "textbookdiksha,grade,subject,medium"
-        ],
-        "blacklisted": []
-      }
-    },
-    {
       "name": "NAS",
       "namespace": "nas",
       "description": "NAS",
@@ -63,7 +79,8 @@
       "dimensions": {
         "whitelisted": [
           "district,lonas,subject,grade",
-          "state,lonas,subject,grade"
+          "state,lonas,subject,grade",
+          "state,district,grade"
         ],
         "blacklisted": []
       }
@@ -83,26 +100,6 @@
         "whitelisted": [
           "district,categoryudise",
           "state,categoryudise"
-        ],
-        "blacklisted": []
-      }
-    },
-    {
-      "name": "Review and Monitoring",
-      "namespace": "rev_and_monitoring",
-      "description": "Review and Monitoring",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/AP/programs/rev-and-monitor"
-      },
-      "./output": {
-        "location": "./output/programs/rev-and-monitor"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "academicyear,district",
-          "academicyear,block",
-          "academicyear,cluster"
         ],
         "blacklisted": []
       }
@@ -142,10 +139,15 @@
           "state,district,programnishtha",
           "state,programnishtha,coursenishtha",
           "state,programnishtha",
-          "district,programnishtha"
+          "district,programnishtha",
+	        "coursenishtha,programnishtha"
         ],
         "blacklisted": []
       }
-    }  
+    }
+    
+   
+    
+  
   ]
 }

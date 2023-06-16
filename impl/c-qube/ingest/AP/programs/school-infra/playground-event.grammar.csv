@@ -1,0 +1,5 @@
+school,academicyear,
+school_id,academicyear_id,
+string,string,integer
+school_id,academicyear_id,playground
+dimension,dimension,metric
