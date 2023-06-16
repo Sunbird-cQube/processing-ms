@@ -42,6 +42,6 @@ lerna-debug.log*
 debug
 logs
 
-ingest
+# ingest
 ingest-bak
 ingest-new
