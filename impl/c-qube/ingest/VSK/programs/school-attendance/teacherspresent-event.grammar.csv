@@ -1,6 +1,6 @@
 ,district,block,cluster,school,schoolcategory,schoolmanagement,statecategory,grade,
-,district_id,block_id,cluster_id,school_id,schoolcategory,schoolmanagement_name,statecategory_name,grade,
+,district_id,block_id,cluster_id,school_id,schoolcategory_name,schoolmanagement_name,statecategory_name,grade,
 date,string,string,string,string,string,string,string,string,integer
-date,district_id,block_id,cluster_id,school_id,schoolcategory,schoolmanagement_name,statecategory_name,grade,teachers_marked_present
+date,district_id,block_id,cluster_id,school_id,schoolcategory_name,schoolmanagement_name,statecategory_name,grade,teachers_marked_present
 timeDimension,dimension,dimension,dimension,dimension,dimension,dimension,dimension,dimension,metric
 
