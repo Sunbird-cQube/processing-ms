@@ -6,7 +6,7 @@
     "namespace": "dimensions",
     "fileNameFormat": "${dimensionName}.${index}.dimensions.data.csv",
     "input": {
-      "files": "./ingest/JH/dimensions"
+      "files": "./ingest/NVSK/dimensions"
     }
   },
   "programs": [
@@ -16,7 +16,7 @@
       "description": "DIKSHA",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/diksha"
+        "files": "./ingest/NVSK/programs/diksha"
       },
       "./output": {
         "location": "./output/programs/diksha"
@@ -36,7 +36,7 @@
       "description": "School Attendance",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/school-attendance"
+        "files": "./ingest/NVSK/programs/school-attendance"
       },
       "./output": {
         "location": "././output/programs/school-attendance"
@@ -53,7 +53,7 @@
       "description": "PM Poshan",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/pm-poshan"
+        "files": "./ingest/NVSK/programs/pm-poshan"
       },
       "./output": {
         "location": "./output/programs/pm-poshan"
@@ -71,7 +71,7 @@
       "description": "NAS",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/nas"
+        "files": "./ingest/NVSK/programs/nas"
       },
       "./output": {
         "location": "./output/programs/nas"
@@ -91,7 +91,7 @@
       "description": "UDISE",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/udise"
+        "files": "./ingest/NVSK/programs/udise"
       },
       "./output": {
         "location": "./output/programs/udise"
@@ -110,7 +110,7 @@
       "description": "PGI",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/pgi"
+        "files": "./ingest/NVSK/programs/pgi"
       },
       "./output": {
         "location": "./output/programs/pgi"
@@ -129,7 +129,7 @@
       "description": "NISHTHA",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/JH/programs/nishtha"
+        "files": "./ingest/NVSK/programs/nishtha"
       },
       "./output": {
         "location": "./output/programs/nishtha"
