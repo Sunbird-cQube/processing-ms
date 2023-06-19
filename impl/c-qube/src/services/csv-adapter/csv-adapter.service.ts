@@ -57,7 +57,7 @@ export class CsvAdapterService {
   ) {}
 
   public async ingest(
-    ingestionFolder = `./ingest/${process.env.STATE_NAME}`,
+    ingestionFolder = `./ingest/${process.env.PROGRAM_TYPE}`,
     ingestionConfigFileName = 'config.json',
   ) {
     const s = spinner();
@@ -409,7 +409,7 @@ export class CsvAdapterService {
     
   }
   
-  public async ingestData(filter: any, programDir = `./ingest/${process.env.STATE_NAME}/programs`) {
+  public async ingestData(filter: any, programDir = `./ingest/${process.env.PROGRAM_TYPE}/programs`) {
     // const s = spinner();
     // s.start('🚧 1. Deleting Old Data');
     // await this.nukeDatasets();
@@ -649,7 +649,7 @@ export class CsvAdapterService {
       console.error(e);
     }
   }
-  public async generateOnlyDimensionGrammar(ingestionFolder = `./ingest/${process.env.STATE_NAME}`){
+  public async generateOnlyDimensionGrammar(ingestionFolder = `./ingest/${process.env.PROGRAM_TYPE}`){
     const s = spinner();
     
     // await this.nuke();
@@ -723,7 +723,7 @@ export class CsvAdapterService {
     s.stop("✅  Dimension Grammars have been ingested")
   }
 
-  public async generateOnlyEventAndDatasetGrammar(ingestionFolder = `./ingest/${process.env.STATE_NAME}`){
+  public async generateOnlyEventAndDatasetGrammar(ingestionFolder = `./ingest/${process.env.PROGRAM_TYPE}`){
 
     const s = spinner();
     const config = JSON.parse(
@@ -974,7 +974,7 @@ export class CsvAdapterService {
     s.stop('✅ Dataset Grammars have been ingested');  
   }
 
-  public async ingestDimensionData(filter: any,ingestionFolder = `./ingest/${process.env.STATE_NAME}`){
+  public async ingestDimensionData(filter: any,ingestionFolder = `./ingest/${process.env.PROGRAM_TYPE}`){
     const s = spinner();
      // Parse the config
      s.start('🚧 1. Reading your config');
