@@ -1,5 +1,5 @@
 ,district,block,cluster,school,schoolcategory,schoolmanagement,statecategory,grade,
-,district_id,block_id,cluster_id,school_id,schoolcategory_name,schoolmanagement_name,statecategory_name,grade,
+,district_id,block_id,cluster_id,school_id,schoolcategory_name,schoolmanagement_name,school_statecategory_name,grade,
 date,string,string,string,string,string,string,string,string,integer
-date,district_id,block_id,cluster_id,school_id,schoolcategory_name,schoolmanagement_name,statecategory_name,grade,teachers_marked
+date,district_id,block_id,cluster_id,school_id,schoolcategory_name,schoolmanagement_name,school_statecategory_name,grade,teachers_marked
 timeDimension,dimension,dimension,dimension,dimension,dimension,dimension,dimension,dimension,metric
