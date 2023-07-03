@@ -1,5 +1,0 @@
-,district,block,cluster,school,
-,district_id,block_id,cluster_id,school_id,
-date,string,string,string,string,integer
-date,district_id,block_id,cluster_id,school_id,teachers_marked
-timeDimension,dimension,dimension,dimension,dimension,metric
