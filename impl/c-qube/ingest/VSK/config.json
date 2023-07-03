@@ -60,7 +60,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "district,categorypm",
+          "state,district,categorypm",
           "state,categorypm"
         ],
         "blacklisted": []
@@ -99,7 +99,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "district,categoryudise",
+          "state,district,categoryudise",
           "state,categoryudise"
         ],
         "blacklisted": []
