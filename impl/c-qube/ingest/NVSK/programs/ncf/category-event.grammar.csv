@@ -1,0 +1,5 @@
+state,categoryncf,
+state_id,category_name,
+string,string,integer
+state_id,category_name,category_value
+dimension,dimension,metric

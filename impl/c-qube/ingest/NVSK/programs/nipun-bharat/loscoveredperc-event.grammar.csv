@@ -1,0 +1,5 @@
+textbooknipun,
+textbook_name,
+string,integer
+textbook_name,perc_los_covered
+dimension,metric

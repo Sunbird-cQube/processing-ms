@@ -1,0 +1,5 @@
+state,quizncert,
+state_id,quiz_name,
+string,string,integer
+state_id,quiz_name,total_enrollments
+dimension,dimension,metric
