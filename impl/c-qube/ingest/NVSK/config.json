@@ -39,7 +39,7 @@
         "files": "./ingest/NVSK/programs/pm-poshan"
       },
       "./output": {
-        "location": "./output/programs/pm-poshan"
+        "location": "./output/NVSK/programs/pm-poshan"
       },
       "dimensions": {
         "whitelisted": [
@@ -57,7 +57,7 @@
         "files": "./ingest/NVSK/programs/micro-improvements"
       },
       "./output": {
-        "location": "./output/programs/micro-improvements"
+        "location": "./output/NVSK/programs/micro-improvements"
       },
       "dimensions": {
         "whitelisted": [],
@@ -73,7 +73,7 @@
         "files": "./ingest/NVSK/programs/nipun-bharat"
       },
       "./output": {
-        "location": "./output/programs/nipun-bharat"
+        "location": "./output/NVSK/programs/nipun-bharat"
       },
       "dimensions": {
         "whitelisted": [],
@@ -89,7 +89,7 @@
         "files": "./ingest/NVSK/programs/ncf"
       },
       "./output": {
-        "location": "./output/programs/ncf"
+        "location": "./output/NVSK/programs/ncf"
       },
       "dimensions": {
         "whitelisted": [  
@@ -106,7 +106,7 @@
         "files": "./ingest/NVSK/programs/ncert-quiz"
       },
       "./output": {
-        "location": "./output/programs/ncert-quiz"
+        "location": "./output/NVSK/programs/ncert-quiz"
       },
       "dimensions": {
         "whitelisted": [
@@ -124,7 +124,7 @@
         "files": "./ingest/NVSK/programs/udise"
       },
       "./output": {
-        "location": "./output/programs/udise"
+        "location": "./output/NVSK/programs/udise"
       },
       "dimensions": {
         "whitelisted": [
@@ -143,7 +143,7 @@
         "files": "./ingest/NVSK/programs/pgi"
       },
       "./output": {
-        "location": "./output/programs/pgi"
+        "location": "./output/NVSK/programs/pgi"
       },
       "dimensions": {
         "whitelisted": [
@@ -162,7 +162,7 @@
         "files": "./ingest/NVSK/programs/nishtha"
       },
       "./output": {
-        "location": "./output/programs/nishtha"
+        "location": "./output/NVSK/programs/nishtha"
       },
       "dimensions": {
         "whitelisted": [
