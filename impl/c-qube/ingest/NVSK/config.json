@@ -43,7 +43,8 @@
       },
       "dimensions": {
         "whitelisted": [
-          "district,categorypm"
+          "state,district,categorypm",
+          "state,categorypm"
         ],
         "blacklisted": []
       }
@@ -60,7 +61,8 @@
         "location": "./output/NVSK/programs/micro-improvements"
       },
       "dimensions": {
-        "whitelisted": [],
+        "whitelisted": [ "state,district,categorymicro",
+        "state,categorymicro"],
         "blacklisted": []
       }
     },
@@ -128,7 +130,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "district,categoryudise",
+          "state,district,categoryudise",
           "state,categoryudise"
         ],
         "blacklisted": []
