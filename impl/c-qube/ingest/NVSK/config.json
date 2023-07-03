@@ -19,30 +19,13 @@
         "files": "./ingest/NVSK/programs/diksha"
       },
       "./output": {
-        "location": "./output/programs/diksha"
+        "location": "./output/NVSK/programs/diksha"
       },
       "dimensions": {
         "whitelisted": [
           "state,grade,subject,medium",
           "textbookdiksha,grade,subject,medium"
          
-        ],
-        "blacklisted": []
-      }
-    },
-    {
-      "name": "School Attendance",
-      "namespace": "sch_att",
-      "description": "School Attendance",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/NVSK/programs/school-attendance"
-      },
-      "./output": {
-        "location": "././output/programs/school-attendance"
-      },
-      "dimensions": {
-        "whitelisted": [
         ],
         "blacklisted": []
       }
@@ -56,7 +39,7 @@
         "files": "./ingest/NVSK/programs/pm-poshan"
       },
       "./output": {
-        "location": "./output/programs/pm-poshan"
+        "location": "./output/NVSK/programs/pm-poshan"
       },
       "dimensions": {
         "whitelisted": [
@@ -66,21 +49,68 @@
       }
     },
     {
-      "name": "NAS",
-      "namespace": "nas",
-      "description": "NAS",
+      "name": "Micro Improvements",
+      "namespace": "micro_improvements",
+      "description": "Micro Improvements",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/NVSK/programs/nas"
+        "files": "./ingest/NVSK/programs/micro-improvements"
       },
       "./output": {
-        "location": "./output/programs/nas"
+        "location": "./output/NVSK/programs/micro-improvements"
+      },
+      "dimensions": {
+        "whitelisted": [],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NIPUN BHARAT",
+      "namespace": "nipun_bharat",
+      "description": "NIPUN BHARAT",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/nipun-bharat"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/nipun-bharat"
+      },
+      "dimensions": {
+        "whitelisted": [],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NCF",
+      "namespace": "ncf",
+      "description": "NCF",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/ncf"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/ncf"
+      },
+      "dimensions": {
+        "whitelisted": [  
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NCERT QUIZ",
+      "namespace": "ncert_quiz",
+      "description": "NCERT QUIZ",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/ncert-quiz"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/ncert-quiz"
       },
       "dimensions": {
         "whitelisted": [
-          "district,lonas,subject,grade",
-          "state,lonas,subject,grade",
-          "state,district,grade"
+                     
         ],
         "blacklisted": []
       }
@@ -94,7 +124,7 @@
         "files": "./ingest/NVSK/programs/udise"
       },
       "./output": {
-        "location": "./output/programs/udise"
+        "location": "./output/NVSK/programs/udise"
       },
       "dimensions": {
         "whitelisted": [
@@ -113,7 +143,7 @@
         "files": "./ingest/NVSK/programs/pgi"
       },
       "./output": {
-        "location": "./output/programs/pgi"
+        "location": "./output/NVSK/programs/pgi"
       },
       "dimensions": {
         "whitelisted": [
@@ -132,7 +162,7 @@
         "files": "./ingest/NVSK/programs/nishtha"
       },
       "./output": {
-        "location": "./output/programs/nishtha"
+        "location": "./output/NVSK/programs/nishtha"
       },
       "dimensions": {
         "whitelisted": [
@@ -145,9 +175,7 @@
         "blacklisted": []
       }
     }
-    
-   
-    
-  
+     
   ]
 }
+
