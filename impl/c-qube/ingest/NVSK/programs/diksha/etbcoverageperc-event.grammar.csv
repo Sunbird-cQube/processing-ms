@@ -1,0 +1,5 @@
+state,
+state_id,
+string,integer
+state_id,perc_etb_coverage
+dimension,metric
