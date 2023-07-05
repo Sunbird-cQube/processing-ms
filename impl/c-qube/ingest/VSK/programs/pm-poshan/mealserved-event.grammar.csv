@@ -1,0 +1,5 @@
+district,
+district_id,
+string,integer
+district_id,total_meals_served
+dimension,metric

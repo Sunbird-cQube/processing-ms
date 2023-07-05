@@ -1,0 +1,5 @@
+quizncert,medium,
+quiz_name,medium,
+string,string,integer
+quiz_name,medium,completion_perc
+dimension,dimension,metric

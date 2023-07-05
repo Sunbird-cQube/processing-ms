@@ -1,0 +1,189 @@
+{
+  "globals": {
+    "onlyCreateWhitelisted": true
+  },
+  "dimensions": {
+    "namespace": "dimensions",
+    "fileNameFormat": "${dimensionName}.${index}.dimensions.data.csv",
+    "input": {
+      "files": "./ingest/NVSK/dimensions"
+    }
+  },
+  "programs": [
+    {
+      "name": "DIKSHA",
+      "namespace": "diksha",
+      "description": "DIKSHA",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/diksha"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/diksha"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "state,grade,subject,medium",
+          "textbookdiksha,grade,subject,medium"
+         
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "PM Poshan",
+      "namespace": "pm_poshan",
+      "description": "PM Poshan",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/pm-poshan"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/pm-poshan"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "district,categorypm",
+          "state,categorypm"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "Micro Improvements",
+      "namespace": "micro_improvements",
+      "description": "Micro Improvements",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/micro-improvements"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/micro-improvements"
+      },
+      "dimensions": {
+        "whitelisted": [ 
+        "district,categorymicro",
+        "state,categorymicro"
+      ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NIPUN BHARAT",
+      "namespace": "nipun_bharat",
+      "description": "NIPUN BHARAT",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/nipun-bharat"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/nipun-bharat"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "grade,subject"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NCF",
+      "namespace": "ncf",
+      "description": "NCF",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/ncf"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/ncf"
+      },
+      "dimensions": {
+        "whitelisted": [  
+          "state,categoryncf"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NCERT QUIZ",
+      "namespace": "ncert_quiz",
+      "description": "NCERT QUIZ",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/ncert-quiz"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/ncert-quiz"
+      },
+      "dimensions": {
+        "whitelisted": [
+            "quiz,medium",
+            "state,quiz"         
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "UDISE",
+      "namespace": "udise",
+      "description": "UDISE",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/udise"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/udise"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "district,categoryudise",
+          "state,categoryudise"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "PGI",
+      "namespace": "pgi",
+      "description": "PGI",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/pgi"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/pgi"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "district,categorypgi",
+          "state,categorypgi"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NISHTHA",
+      "namespace": "nishtha",
+      "description": "NISHTHA",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/nishtha"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/nishtha"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "state,district,programnishtha",
+          "state,programnishtha,coursenishtha",
+          "state,programnishtha",
+          "district,programnishtha",
+	        "coursenishtha,programnishtha"
+        ],
+        "blacklisted": []
+      }
+    }
+     
+  ]
+}
+

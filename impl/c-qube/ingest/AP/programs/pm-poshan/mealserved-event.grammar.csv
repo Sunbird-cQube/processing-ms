@@ -1,5 +1,0 @@
-,district,
-,district_id,
-date,string,string
-date,district_id,total_meals_served
-timeDimension,dimension,metric
