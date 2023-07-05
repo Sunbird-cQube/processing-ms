@@ -43,7 +43,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,categorypm",
+          "district,categorypm",
           "state,categorypm"
         ],
         "blacklisted": []
@@ -61,8 +61,10 @@
         "location": "./output/NVSK/programs/micro-improvements"
       },
       "dimensions": {
-        "whitelisted": [ "state,district,categorymicro",
-        "state,categorymicro"],
+        "whitelisted": [ 
+        "district,categorymicro",
+        "state,categorymicro"
+      ],
         "blacklisted": []
       }
     },
@@ -78,7 +80,9 @@
         "location": "./output/NVSK/programs/nipun-bharat"
       },
       "dimensions": {
-        "whitelisted": [],
+        "whitelisted": [
+          "grade,subject"
+        ],
         "blacklisted": []
       }
     },
@@ -95,6 +99,7 @@
       },
       "dimensions": {
         "whitelisted": [  
+          "state,categoryncf"
         ],
         "blacklisted": []
       }
@@ -112,7 +117,8 @@
       },
       "dimensions": {
         "whitelisted": [
-                     
+            "quiz,medium",
+            "state,quiz"         
         ],
         "blacklisted": []
       }
@@ -130,7 +136,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,categoryudise",
+          "district,categoryudise",
           "state,categoryudise"
         ],
         "blacklisted": []
@@ -149,7 +155,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,categorypgi",
+          "district,categorypgi",
           "state,categorypgi"
         ],
         "blacklisted": []
