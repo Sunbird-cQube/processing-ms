@@ -43,7 +43,7 @@ export const createDatasetDataToBeInserted = async (
   const dateParser = new DateParser('dd/MM/yy');
 
   const datasetEvents: cQubeEvent[] = [];
-  for (let row = 1; row < df.length - 1; row++) {
+  for (let row = 1; row < df.length; row++) {
     const rowData = df[row];
     try {
       const rowObject = {};
@@ -121,7 +121,7 @@ export const createCompoundDatasetDataToBeInserted = async (
   const datasetEvents: cQubeEvent[] = [];
   const dateParser = new DateParser('dd/MM/yy');
 
-  for (let row = 1; row < df.length - 1; row++) {
+  for (let row = 1; row < df.length; row++) {
     const rowData = df[row];
     try {
       const rowObject = {};
