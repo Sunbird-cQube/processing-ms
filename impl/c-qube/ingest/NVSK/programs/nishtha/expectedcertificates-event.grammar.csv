@@ -1,5 +1,5 @@
 state,programnishtha,
 state_id,program_name,
 string,string,integer
-state_id,program_name,total_courses
+state_id,program_name,total_expected_certificates
 dimension,dimension,metric
