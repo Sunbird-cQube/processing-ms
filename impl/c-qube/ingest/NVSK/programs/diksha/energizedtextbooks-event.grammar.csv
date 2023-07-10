@@ -1,5 +1,5 @@
 state,
 state_id,
 string,integer
-state_id,perc_etb_coverage
+state_id,energized_textbooks
 dimension,metric

@@ -1,5 +1,5 @@
 state,
 state_id,
 string,integer
-state_id,total_qr_count
+state_id,total_energized_textbooks
 dimension,metric

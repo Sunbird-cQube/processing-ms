@@ -1,5 +1,5 @@
 state,
 state_id,
 string,integer
-state_id,total_live_tb
+state_id,perc_energized_textbooks
 dimension,metric
