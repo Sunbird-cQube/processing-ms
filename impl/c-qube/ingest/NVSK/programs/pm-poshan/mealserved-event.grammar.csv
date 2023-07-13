@@ -1,5 +1,5 @@
-state,district,
-state_id,district_id,
-string,string,integer
-state_id,district_id,total_meals_served
-dimension,dimension,metric
+,state,district,
+,state_id,district_id,
+date,string,string,integer
+date,state_id,district_id,total_meals_served
+timeDimension,dimension,dimension,metric
