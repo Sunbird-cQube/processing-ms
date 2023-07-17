@@ -184,6 +184,26 @@
         ],
         "blacklisted": []
       }
+    },
+    {
+      "name": "NAS",
+      "namespace": "nas",
+      "description": "NAS",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/nas"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/nas"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "district,lonas,subject,grade",
+          "state,lonas,subject,grade",
+          "state,district,grade"
+        ],
+        "blacklisted": []
+      }
     }
      
   ]
