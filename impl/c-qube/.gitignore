@@ -42,6 +42,10 @@ lerna-debug.log*
 debug
 logs
 
-# ingest
+!ingest
+/ingest/VSK/dimensions/*.data.csv
+/ingest/VSK/programs/*/*.data.csv
+/ingest/NVSK/dimensions/*.data.csv
+/ingest/NVSK/programs/*/*.data.csv
 ingest-bak
 ingest-new
