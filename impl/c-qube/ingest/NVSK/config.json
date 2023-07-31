@@ -176,11 +176,11 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,programnishtha",
+          "state,programnishtha,programstatusnishtha",
           "state,programnishtha,coursenishtha",
           "state,programnishtha",
-          "district,programnishtha",
-	        "coursenishtha,programnishtha"
+          "state,programnishtha,languagenishtha",
+          "programnishtha,coursenishtha"    
         ],
         "blacklisted": []
       }

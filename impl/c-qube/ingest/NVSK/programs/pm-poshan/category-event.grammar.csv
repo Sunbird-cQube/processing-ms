@@ -2,4 +2,4 @@
 ,state_id,district_id,category_name,
 date,string,string,string,integer
 date,state_id,district_id,category_name,category_value
-timeDimension,dimension,dimension,dimension,metric
+timeDimension,dimension,dimension,dimension,metric
