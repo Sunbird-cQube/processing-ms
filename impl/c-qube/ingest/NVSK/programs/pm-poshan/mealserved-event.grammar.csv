@@ -2,4 +2,4 @@
 ,state_id,district_id,
 date,string,string,integer
 date,state_id,district_id,total_meals_served
-timeDimension,dimension,dimension,metric
+timeDimension,dimension,dimension,metric
