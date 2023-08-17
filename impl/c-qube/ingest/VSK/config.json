@@ -119,7 +119,8 @@
       "dimensions": {
         "whitelisted": [
           "district,categorypgi",
-          "state,categorypgi"
+          "state,categorypgi",
+          "state,district,categorypgi"
         ],
         "blacklisted": []
       }
