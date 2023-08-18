@@ -649,10 +649,16 @@ export class CsvAdapterService {
       console.error(e);
     }
   }
+
+  public async nukeDimensionGrammar(){
+    const query=`DELETE FROM  spec."DimensionGrammar" where "dimensionType"='EXTERNAL'`;
+    await this.prisma.$executeRawUnsafe(query);
+  }
+
   public async generateOnlyDimensionGrammar(ingestionFolder = `./ingest/${process.env.PROGRAM_TYPE}`){
     const s = spinner();
     
-    // await this.nuke();
+      await this.nukeDimensionGrammar();
      // Parse the config
      s.start('🚧  Reading your config');
      const config = JSON.parse(
@@ -677,7 +683,7 @@ export class CsvAdapterService {
           .split('-')[0];
         const result = await this.prisma.dimensionGrammar.findUnique({where:{name: dimensionName}})
         if(!result)
-        {        
+        {   
         const dimensionGrammar = await createDimensionGrammarFromCSVDefinition(
           currentDimensionGrammarFileName,
         );
@@ -747,10 +753,7 @@ export class CsvAdapterService {
         const dimensionGrammar = await createDimensionGrammarFromCSVDefinition(
           currentDimensionGrammarFileName,
         );
-        dimensions.push(dimensionGrammar);
-        
-          
-        
+        dimensions.push(dimensionGrammar);                          
        
       }
     }
@@ -780,11 +783,14 @@ export class CsvAdapterService {
           eventGrammarsGlobal.push(...eventGrammar);
           for (let i = 0; i < eventGrammar.length; i++) {
             eventGrammar[i].program = config.programs[j].namespace;
+            const result = await this.prisma.eventGrammar.findUnique({where:{name: eventGrammar[i].name}})
+            if(!result){            
             await this.eventService
               .createEventGrammar(eventGrammar[i])
               .catch((e) => {
                 console.error(e);
               });
+            }
           }
           if (ifTimeDimensionPresent) {
             const dgs1 = await createDatasetGrammarsFromEG(
@@ -792,16 +798,29 @@ export class CsvAdapterService {
               defaultTimeDimensions,
               eventGrammar,
             );
-            datasetGrammarsGlobal.push(...dgs1);
+            for(let i=0;i<dgs1.length;i++){
+            // console.log("The Dataset name is:",dgs1[i].name);
+            const result = await this.prisma.datasetGrammar.findUnique({where:{name: dgs1[i].name}})
+            if(!result){
+              datasetGrammarsGlobal.push(...dgs1);
+            }
+          }
+
           } else {
             const dgs2 = await createDatasetGrammarsFromEGWithoutTimeDimension(
               config.programs[j].namespace,
               eventGrammar,
             );
-            datasetGrammarsGlobal.push(...dgs2);
+            for(let i=0;i<dgs2.length;i++){
+              const result = await this.prisma.datasetGrammar.findUnique({where:{name: dgs2[i].name}})
+              if(!result){
+                datasetGrammarsGlobal.push(...dgs2);
+              }
+              }
           }
         }
       }
+
     }
     s.stop('✅ Event Grammars have been ingested');
     s.start('🚧  Processing Dataset Grammars');
@@ -884,9 +903,7 @@ export class CsvAdapterService {
             // datasetGrammarsGlobal.push(...dgsCompoundWithoutTD);
             for (let m = 0; m < dgsCompoundWithoutTD.length; m++) {
               const datasetResult = await this.prisma.datasetGrammar.findUnique({where:{name:dgsCompoundWithoutTD[m].name}})  
-              
               if(!datasetResult){
-                console.log("coming inside if")
                 datasetGrammarsGlobal.push(dgsCompoundWithoutTD[m]);
                 compoundDatasetGrammars.push({
                 dg: dgsCompoundWithoutTD[m],
@@ -901,7 +918,6 @@ export class CsvAdapterService {
               continue
             }
           }
-            // console.log({ egfWithTD, egfWithoutTD, dgsCompoundWithoutTD });
 
             for (let l = 0; l < defaultTimeDimensions.length; l++) {
               const allExistingDGs =
@@ -952,7 +968,7 @@ export class CsvAdapterService {
       'datasetGrammars.file',
     );
     if(datasetGrammarsGlobal.length > 0)
-    {
+    {     
       await Promise.all(
         datasetGrammarsGlobal.map((x) =>
           retryPromiseWithDelay(
