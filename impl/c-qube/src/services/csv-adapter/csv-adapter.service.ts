@@ -44,7 +44,7 @@ const pl = require('nodejs-polars');
 const _ = require('lodash');
 const pLimit = require('p-limit');
 const limit = pLimit(10);
-
+const fs1 = require('fs');
 @Injectable()
 export class CsvAdapterService {
   private readonly logger: Logger = new Logger(CsvAdapterService.name);
@@ -1038,6 +1038,7 @@ export class CsvAdapterService {
           'grammar',
           'data',
         );
+        if(fs1.existsSync(dimensionDataFileName)){
         await processCsv(dimensionDataFileName, dimensionDataFileName.split('.csv')[0] + '_temp.csv');
         const df: DataFrame = pl.readCSV(dimensionDataFileName, {
           quoteChar: "'",
@@ -1073,6 +1074,10 @@ export class CsvAdapterService {
               console.error('Error in adding', dimensionGrammar.name);
             }),
         ); 
+      }
+      else{
+        continue;
+      }
         if(filter != 'none')
         {
           break;
