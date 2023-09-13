@@ -1,0 +1,5 @@
+,users,
+,userId,
+date,string,integer
+date,userId,userCount
+timeDimension,dimension,metric
