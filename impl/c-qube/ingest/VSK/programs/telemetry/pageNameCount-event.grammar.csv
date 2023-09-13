@@ -1,0 +1,5 @@
+,pageNames,pageEvents,
+,pageName,pageEvent,
+date,string,string,integer
+date,pageName,pageEvent,pageCount
+timeDimension,dimension,dimension,metric
