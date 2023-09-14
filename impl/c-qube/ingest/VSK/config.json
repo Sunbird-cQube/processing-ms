@@ -156,7 +156,7 @@
         "files": "./ingest/VSK/programs/telemetry"
       },
       "./output": {
-        "location": "./output/VSK/programs/telemetry"
+        "location": "./output/programs/telemetry"
       },
       "dimensions": {
         "whitelisted": [
