@@ -214,7 +214,7 @@
         "files": "./ingest/NVSK/programs/telemetry"
       },
       "./output": {
-        "location": "./output/NVSK/programs/telemetry"
+        "location": "./output/programs/telemetry"
       },
       "dimensions": {
         "whitelisted": [
