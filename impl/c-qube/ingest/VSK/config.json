@@ -153,10 +153,10 @@
       "description": "Telemetry",
       "shouldIngestToDB": true,
       "input": {
-        "files": "./ingest/NVSK/programs/telemetry"
+        "files": "./ingest/VSK/programs/telemetry"
       },
       "./output": {
-        "location": "./output/NVSK/programs/telemetry"
+        "location": "./output/VSK/programs/telemetry"
       },
       "dimensions": {
         "whitelisted": [
