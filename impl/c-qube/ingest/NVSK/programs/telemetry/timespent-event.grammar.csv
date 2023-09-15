@@ -1,4 +1,4 @@
-,users,pageNames,
+,users,pagenames,
 ,userId,pageName,
 date,string,string,integer
 date,userId,pageName,timespent
