@@ -1,0 +1,5 @@
+,users,browsers,
+,userId,browserName,
+date,string,string,integer
+date,userId,browserName,browserCount
+timeDimension,dimension,dimension,metric
