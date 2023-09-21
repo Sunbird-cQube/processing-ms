@@ -218,11 +218,11 @@
       },
       "dimensions": {
         "whitelisted": [
-          "users,pageNames",
+          "users,pagenames",
           "users,devices",
           "users,browsers",
-          "users,pageEvents,pageNames",
-          "pageNames,pageEvents"
+          "users,pageevents,pagenames",
+          "pagenames,pageevents"
         ],
         "blacklisted": []
       }
