@@ -1,5 +1,5 @@
-district,programnishtha,
-district_id,program_name,
+state,programnishtha,
+state_id,program_name,
 string,string,integer
-district_id,program_name,total_certifications_achieved
+state_id,program_name,total_certifications_achieved
 dimension,dimension,metric

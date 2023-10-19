@@ -206,6 +206,24 @@
       }
     },
     {
+      "name": "PM SHRI",
+      "namespace": "pm_shri",
+      "description": "pm_shri",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/pm-shri"
+      },
+      "./output": {
+        "location": "./output/programs/pm-shri"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "state,categorypmshri"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
       "name": "Telemetry",
       "namespace": "telemetry",
       "description": "Telemetry",
@@ -229,4 +247,6 @@
     }
   ]
 }
+
+
 

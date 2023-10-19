@@ -1,5 +1,5 @@
-district,programnishtha,programstatusnishtha,
-district_id,program_name,program_status,
+state,programnishtha,programstatusnishtha,
+state_id,program_name,program_status,
 string,string,string,integer
-district_id,program_name,program_status,started
+state_id,program_name,program_status,started
 dimension,dimension,dimension,metric
