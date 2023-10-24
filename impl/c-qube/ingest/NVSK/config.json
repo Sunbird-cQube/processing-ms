@@ -204,8 +204,49 @@
         ],
         "blacklisted": []
       }
+    },
+    {
+      "name": "PM SHRI",
+      "namespace": "pm_shri",
+      "description": "pm_shri",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/pm-shri"
+      },
+      "./output": {
+        "location": "./output/programs/pm-shri"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "state,categorypmshri"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "Telemetry",
+      "namespace": "telemetry",
+      "description": "Telemetry",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/telemetry"
+      },
+      "./output": {
+        "location": "./output/programs/telemetry"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "users,pagenames",
+          "users,devices",
+          "users,browsers",
+          "users,pageevents,pagenames",
+          "pagenames,pageevents"
+        ],
+        "blacklisted": []
+      }
     }
-     
   ]
 }
+
+
 
