@@ -1,0 +1,5 @@
+state,
+state_id,
+string,integer
+state_id,perc_energized_textbooks
+dimension,metric

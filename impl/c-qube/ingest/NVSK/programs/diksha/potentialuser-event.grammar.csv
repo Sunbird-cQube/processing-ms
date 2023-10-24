@@ -1,0 +1,5 @@
+state,
+state_id,
+string,integer
+state_id,learning_session_on_potential_user
+dimension,metric

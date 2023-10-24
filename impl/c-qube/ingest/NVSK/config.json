@@ -24,7 +24,8 @@
       "dimensions": {
         "whitelisted": [
           "state,grade,subject,medium",
-          "textbookdiksha,grade,subject,medium"
+          "grade,subject,medium"
+          
          
         ],
         "blacklisted": []
@@ -44,7 +45,8 @@
       "dimensions": {
         "whitelisted": [
           "district,categorypm",
-          "state,categorypm"
+          "state,categorypm",
+          "state,district,categorypm"
         ],
         "blacklisted": []
       }
@@ -117,8 +119,8 @@
       },
       "dimensions": {
         "whitelisted": [
-            "quiz,medium",
-            "state,quiz"         
+            "quizncert,medium",
+            "state,quizncert"         
         ],
         "blacklisted": []
       }
@@ -174,16 +176,77 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,programnishtha",
+          "state,programnishtha,programstatusnishtha",
           "state,programnishtha,coursenishtha",
           "state,programnishtha",
-          "district,programnishtha",
-	        "coursenishtha,programnishtha"
+          "state,programnishtha,languagenishtha",
+          "programnishtha,coursenishtha"    
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "NAS",
+      "namespace": "nas",
+      "description": "NAS",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/nas"
+      },
+      "./output": {
+        "location": "./output/NVSK/programs/nas"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "district,lonas,subject,grade",
+          "state,lonas,subject,grade",
+          "state,district,grade"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "PM SHRI",
+      "namespace": "pm_shri",
+      "description": "pm_shri",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/pm-shri"
+      },
+      "./output": {
+        "location": "./output/programs/pm-shri"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "state,categorypmshri"
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "Telemetry",
+      "namespace": "telemetry",
+      "description": "Telemetry",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/NVSK/programs/telemetry"
+      },
+      "./output": {
+        "location": "./output/programs/telemetry"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "users,pagenames",
+          "users,devices",
+          "users,browsers",
+          "users,pageevents,pagenames",
+          "pagenames,pageevents"
         ],
         "blacklisted": []
       }
     }
-     
   ]
 }
+
+
 

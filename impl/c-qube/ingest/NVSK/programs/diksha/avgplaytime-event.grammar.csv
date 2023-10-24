@@ -1,0 +1,5 @@
+state,grade,subject,medium,
+state_id,grade,subject,medium,
+string,string,string,string,integer
+state_id,grade,subject,medium,average_play_time
+dimension,dimension,dimension,dimension,metric

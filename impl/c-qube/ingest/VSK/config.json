@@ -60,7 +60,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,categorypm",
+          "district,categorypm",
           "state,categorypm"
         ],
         "blacklisted": []
@@ -99,7 +99,7 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,categoryudise",
+          "district,categoryudise",
           "state,categoryudise"
         ],
         "blacklisted": []
@@ -118,8 +118,9 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,categorypgi",
-          "state,categorypgi"
+          "district,categorypgi",
+          "state,categorypgi",
+          "state,district,categorypgi"
         ],
         "blacklisted": []
       }
@@ -137,18 +138,36 @@
       },
       "dimensions": {
         "whitelisted": [
-          "state,district,programnishtha",
-          "state,programnishtha,coursenishtha",
-          "state,programnishtha",
+          "district,programnishtha,programstatusnishtha",
+          "district,programnishtha,coursenishtha",
           "district,programnishtha",
-	        "coursenishtha,programnishtha"
+          "district,programnishtha,languagenishtha",
+          "programnishtha,coursenishtha"   
+        ],
+        "blacklisted": []
+      }
+    },
+    {
+      "name": "Telemetry",
+      "namespace": "telemetry",
+      "description": "Telemetry",
+      "shouldIngestToDB": true,
+      "input": {
+        "files": "./ingest/VSK/programs/telemetry"
+      },
+      "./output": {
+        "location": "./output/programs/telemetry"
+      },
+      "dimensions": {
+        "whitelisted": [
+          "users,pagenames",
+          "users,devices",
+          "users,browsers",
+          "users,pageevents,pagenames",
+          "pagenames,pageevents"
         ],
         "blacklisted": []
       }
     }
-    
-   
-    
-  
   ]
 }

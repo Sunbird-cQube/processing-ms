@@ -1,0 +1,5 @@
+,users,devices,
+,userId,deviceName,
+date,string,string,integer
+date,userId,deviceName,deviceCount
+timeDimension,dimension,dimension,metric
