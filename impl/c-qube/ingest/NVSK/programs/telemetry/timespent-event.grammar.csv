@@ -1,5 +1,0 @@
-,users,pagenames,
-,userId,pageName,
-date,string,string,integer
-date,userId,pageName,timespent
-timeDimension,dimension,dimension,metric

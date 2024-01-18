@@ -146,28 +146,7 @@
         ],
         "blacklisted": []
       }
-    },
-    {
-      "name": "Telemetry",
-      "namespace": "telemetry",
-      "description": "Telemetry",
-      "shouldIngestToDB": true,
-      "input": {
-        "files": "./ingest/VSK/programs/telemetry"
-      },
-      "./output": {
-        "location": "./output/programs/telemetry"
-      },
-      "dimensions": {
-        "whitelisted": [
-          "users,pagenames",
-          "users,devices",
-          "users,browsers",
-          "users,pageevents,pagenames",
-          "pagenames,pageevents"
-        ],
-        "blacklisted": []
-      }
     }
+   
   ]
 }
