@@ -1,5 +1,0 @@
-,users,pagenames,pageevents,
-,userId,pageName,pageEvent,
-date,string,string,string,integer
-date,userId,pageName,pageEvent,pageEventCount
-timeDimension,dimension,dimension,dimension,metric
